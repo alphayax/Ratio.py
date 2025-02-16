@@ -20,6 +20,7 @@ class process_torrent():
         self.configuration = configuration
         self.open_torrent()
         self.torrentclient = Transmission292(self.tracker_info_hash())
+        self.interval = 2400
 
     def open_torrent(self):
         torrent_file = self.configuration['torrent']
@@ -100,7 +101,7 @@ class process_torrent():
             print('----------- Sending Command to Tracker --------')
 
             # get upload
-            min_up = self.interval-(self.interval*0.1)
+            min_up = int(self.interval-(self.interval*0.1))
             max_up = self.interval
             randomize_upload = random.randint(min_up, max_up)
             uploaded = int(self.configuration['upload'])*1000*randomize_upload
