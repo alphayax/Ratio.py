@@ -4,13 +4,21 @@ Ratio.py is a small command line RatioMaster.Net like in Python3. It fakes uploa
 Current emulators available are:
 * Transmission 2.92
 
-## Requirements:
+## Requirements
 1. Python 3.x
 2. pip install -r requirements.txt
 
-## Usage:
+## Usage
 ```console
 foo@bar:~/ratio.py$ python ratio.py -c configuration.json 
+```
+
+### With virtual env
+
+```bash
+python3 -m venv .
+./bin/pip install -r requirements.txt
+./bin/python ratio.py -c configuration.json
 ```
 
 ## Configuration example
